@@ -64,10 +64,7 @@ const SIZES: Partial<Record<AppId, { w: number; h: number }>> = {
 
 let openOffset = 0;
 
-import { create as zCreate } from "zustand";
-
-// re-export above to avoid double install
-export const useWM = zCreate<Store>((set, get) => ({
+export const useWM = create<Store>((set, get) => ({
   windows: [],
   zCounter: 10,
   open: (appId, opts) => {
